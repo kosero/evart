@@ -1,3 +1,14 @@
+let color = new Uint8Array([0, 0, 0]);  // Global scope
+
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "block";
+    } else {
+        menu.style.display = "none";
+    }
+}
+
 function main() {
 	let cvs = document.querySelector("#viewport-canvas");
 	let glWindow = new GLWindow(cvs);
@@ -10,8 +21,21 @@ function main() {
 	let gui = GUI(cvs, glWindow, place);
 }
 
+function colorChange(hex) {
+    const colorField = document.querySelector("#color-field");
+    const colorSwatch = document.querySelector("#color-swatch");
+
+    // Color input ve swatch'u güncelle
+    colorField.value = hex;
+    colorSwatch.style.backgroundColor = hex;
+
+    // Global color array'ini güncelle
+    color[0] = parseInt(hex.substring(1, 3), 16);
+    color[1] = parseInt(hex.substring(3, 5), 16);
+    color[2] = parseInt(hex.substring(5, 7), 16);
+}
+
 const GUI = (cvs, glWindow, place) => {
-	let color = new Uint8Array([0, 0, 0]);
 	let dragdown = false;
 	let touchID = 0;
 	let touchScaling = false;
@@ -67,14 +91,14 @@ const GUI = (cvs, glWindow, place) => {
 
 	cvs.addEventListener("mousedown", (ev) => {
 		switch (ev.button) {
-			case 0:
+			case 2:
 				dragdown = true;
 				lastMovePos = { x: ev.clientX, y: ev.clientY };
 				break;
 			case 1:
 				pickColor({ x: ev.clientX, y: ev.clientY });
 				break;
-			case 2:
+			case 0:
 				if (ev.ctrlKey) {
 					pickColor({ x: ev.clientX, y: ev.clientY });
 				} else {
@@ -207,5 +231,19 @@ const GUI = (cvs, glWindow, place) => {
 		let zoom = glWindow.getZoom();
 		glWindow.setZoom(zoom / factor);
 		glWindow.draw();
+	}
+
+	function colorChange(hex) {
+		const colorField = document.querySelector("#color-field");
+		const colorSwatch = document.querySelector("#color-swatch");
+	
+		// Renk kodunu color-field'e ve color-swatch'a uygula
+		colorField.value = hex;
+		colorSwatch.style.backgroundColor = hex;
+	
+		// Eğer GLWindow objesindeki rengi değiştirmek istersen
+		color[0] = parseInt(hex.substring(1, 3), 16);
+		color[1] = parseInt(hex.substring(3, 5), 16);
+		color[2] = parseInt(hex.substring(5, 7), 16);
 	}
 }

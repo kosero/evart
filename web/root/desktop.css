@@ -17,7 +17,7 @@ body {
 	image-rendering: pixelated;
 	width: 100vw;
 	height: 100vh;
-	background-color: #e0e0e0;
+	background-color: #282828;
 }
 
 #ui-wrapper {
@@ -52,12 +52,19 @@ body {
 	left: 16px;
 	display: flex;
 	flex-direction: row;
+	background-color: #3c3836;
+	border: #928374 solid 1px;
+	color: #ebdbb2;
+	border-radius: 10px;
+	padding: 5px;	
 }
 
 #color-swatch {
 	width: 30px;
 	height: 30px;
 	background-color: #000000;
+	border-radius: 10px;
+	margin-right: 5px;
 }
 
 #color-field {
@@ -67,6 +74,9 @@ body {
 	border: none;
 	outline: none;
 	pointer-events: all;
+	background-color: #3c3836;
+	color: #ebdbb2;
+	border-radius: 10px;
 }
 
 #loading-p {
@@ -81,6 +91,9 @@ body {
 	position: absolute;
 	bottom: 16px;
 	right: 16px;
+	background-color: #3c3836;
+	border: #928374 solid 1px;
+	border-radius: 10px;
 }
 
 .zoom-button {
@@ -89,13 +102,11 @@ body {
 	border: none;
 	background: none;
 	outline: none;
-	background-color: red;
 	font-size: 24px;
-	background-color: #ffffff;
-	border: 1px solid black;
 	cursor: pointer;
 	pointer-events: all;
 	user-select: none;
+	color: #ebdbb2;
 }
 
 #help-button {
@@ -105,8 +116,10 @@ body {
 	z-index: 900;
 	width: 60px;
 	padding: 8px;
-	background-color: #ffffff;
-	border: 1px solid #000;
+	background-color: #3c3836;
+	border: #928374 solid 1px;
+	color: #ebdbb2;
+	border-radius: 10px;
 	cursor: pointer;
 }
 
@@ -119,8 +132,10 @@ body {
 	width: 800px;
 	max-width: calc(100vw - 60px);
 	padding: 20px;
-	background-color: #ffffff;
-	border: 1px solid #000;
+	background-color: #3c3836;
+	border: #928374 solid 1px;
+	color: #ebdbb2;
+	border-radius: 10px;
 }
 
 #close-help-popup {
@@ -144,4 +159,146 @@ body {
 	#help-text-mobile {
 		display: inline;
 	}
+}
+
+.color-palette {
+	background-color: #3c3836;
+	border: #928374 solid 1px;
+	color: #ebdbb2;
+    cursor: pointer;
+	width: 50px;
+	height: 43px;
+    border-radius: 10px;
+	position: fixed;
+	left: 285px;
+    bottom: 0;
+	margin-bottom: 15px;
+}
+
+
+.pallet-menu {
+	background-color: #3c3836;
+	border: #928374 solid 1px;
+	color: #ebdbb2;
+    border-radius: 10px;
+    display: none;
+    padding: 20px;
+
+	font-size: 16px;
+	position: fixed;
+	left: 0px;
+    bottom: 0;
+	margin-left: 15px;
+	margin-bottom: 65px;
+	z-index: 1000;
+}
+
+.light-yellow {
+	background-color: #fabd2f;
+}
+
+.light-green {
+	background-color: #b8bb26;
+}
+
+.light-blue {
+	background-color: #83a598;
+}
+
+.light-red {
+	background-color: #fb4934;
+}
+
+.light-purple {
+	background-color: #d3869b;
+}
+
+.light-aqua {
+	background-color: #8ec07c;
+}
+
+.light-orange {
+	background-color: #fe8019;
+}
+
+.light-brown {
+	background-color: #665c54;
+}
+
+.light-gray {
+	background-color: #a89984;
+}
+
+.light-black {
+	background-color: #282828;
+}
+
+
+.dark-yellow {
+	background-color: #d79921;
+}
+
+.dark-green {
+	background-color: #98971a;
+}
+
+.dark-blue {
+	background-color: #458588;
+}
+
+.dark-red {
+	background-color: #cc241d;
+}
+
+.dark-purple {
+	background-color: #b16286;
+}
+
+.dark-aqua {
+	background-color: #689d6a;
+}
+
+.dark-orange {
+	background-color: #d65d0e;
+}
+
+.dark-brown {
+	background-color: #504945;
+}
+
+.dark-gray {
+	background-color: #928374;
+}
+
+.dark-black {
+	background-color: #1d2021;
+}
+
+
+.light-black,
+.light-blue,
+.light-brown,
+.light-green,
+.light-gray,
+.light-orange,
+.light-aqua,
+.light-purple,
+.light-red,
+.light-yellow,
+
+.dark-black,
+.dark-blue,
+.dark-brown,
+.dark-green,
+.dark-gray,
+.dark-orange,
+.dark-aqua,
+.dark-purple,
+.dark-red,
+.dark-yellow {
+    cursor: pointer;
+	margin-bottom: 5px;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
 }

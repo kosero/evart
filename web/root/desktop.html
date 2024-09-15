@@ -5,9 +5,10 @@
 	<title>Place</title>
 	<link rel="stylesheet" href="desktop.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta name="description" content="An online pixel canvas inspired by r/place.">
-	<meta name="keywords" content="r/place, place, game, golang, canvas">
+	<meta name="description" content="El Psy Congroo.">
+	<meta name="keywords" content="Evart, game, canvas">
 	<link rel="preload" href="/place.png" as="fetch" crossorigin>
+	<link rel="icon" href="./nerv.png" type="image/x-icon"/>
 </head>
 
 <body>
@@ -27,26 +28,32 @@
 			</button>
 		</div>
 	</div>
-	<button id="help-button" onclick="document.querySelector('#help-popup').style.visibility = 'visible';">
-		<p><strong>Help</strong></p>
-	</button>
-	<div id="help-popup">
-		<div id="help-text-desktop">
-			<p><strong>Right Click</strong> to place a pixel.</p><br>
-			<p>Use the mouse wheel or <strong>+</strong> and <strong>-</strong> buttons to zoom in.</p><br>
-			<p><strong>Ctrl + Right Click</strong> to select a color from the canvas.</p><br>
-		</div>
-		<div id="help-text-mobile">
-			<p><strong>Tap</strong> to place a pixel.</p><br>
-			<p><strong>Pinch</strong> to zoom or use the <strong>+</strong> and <strong>-</strong> buttons.</p><br>
-			<p><strong>Long press</strong> to select a color from the canvas.</p><br>
-		</div>
-		<p>Set a hexadecimal color value in the lower left corner.</p><br>
-		<p>Source code on <a href="https://github.com/rbxb/place" target="_blank">GitHub</a>.</p>
-		<button id="close-help-popup"
-			onclick="document.querySelector('#help-popup').style.visibility = 'hidden';"><strong>Close
-				me.</strong></button>
-	</div>
+
+	<div class="color-palette" onclick="toggleMenu()"></div>
+    <div class="pallet-menu" id="menu">
+        <div onclick="colorChange('#fabd2f')" class="light-yellow"></div>
+        <div onclick="colorChange('#b8bb26')" class="light-green"></div>
+		<div onclick="colorChange('#83a598')" class="light-blue"></div>
+		<div onclick="colorChange('#fb4934')" class="light-red"></div>
+		<div onclick="colorChange('#d3869b')" class="light-purple"></div>
+		<div onclick="colorChange('#8ec07c')" class="light-aqua"></div>
+		<div onclick="colorChange('#fe8019')" class="light-orange"></div>
+		<div onclick="colorChange('#665c54')" class="light-brown"></div>
+		<div onclick="colorChange('#a89984')" class="light-gray"></div>
+		<div onclick="colorChange('#282828')" class="light-black"></div>
+		<p>..</p>
+		<div onclick="colorChange('#d79921')" class="dark-yellow"></div>
+		<div onclick="colorChange('#98971a')" class="dark-green"></div>
+		<div onclick="colorChange('#458588')" class="dark-blue"></div>
+		<div onclick="colorChange('#cc241d')" class="dark-red"></div>
+		<div onclick="colorChange('#b16286')" class="dark-purple"></div>
+		<div onclick="colorChange('#689d6a')" class="dark-aqua"></div>
+		<div onclick="colorChange('#d65d0e')" class="dark-orange"></div>
+		<div onclick="colorChange('#504945')" class="dark-brown"></div>
+		<div onclick="colorChange('#928374')" class="dark-gray"></div>
+		<div onclick="colorChange('#1d2021')" class="dark-black"></div>
+    </div>
+	
 	<script src="main.js"></script>
 	<script src="place.js"></script>
 	<script src="glwindow.js"></script>
@@ -54,5 +61,4 @@
 		main();
 	</script>
 </body>
-
 </html>
